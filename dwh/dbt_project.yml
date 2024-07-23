@@ -2,7 +2,9 @@ name: 'dwh'
 version: '1.0.0'
 config-version: 2
 
+
 profile: 'dwh'
+
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
@@ -11,6 +13,10 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
+
 clean-targets:
   - "target"
   - "dbt_packages"
+
+vars:
+  plane_name: 'Airbus'
