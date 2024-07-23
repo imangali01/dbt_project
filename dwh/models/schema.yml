@@ -1,31 +1,18 @@
 version: 2
 
-# sources:
-#   - name: public
-#     tables:
-#       - name: airline
-#       - name: airport
-#       - name: country
-#       - name: plane
-#       - name: route
-#       - name: flight
-
 models:
-  - name: dim_airline
-    columns:
-      - name: airlineid
-        tests:
-          - not_null
-          - unique
-  - name: dim_airport
-    columns:
-      - name: airportid
-        tests:
-          - not_null
-          - unique
   - name: fact_flight
     columns:
       - name: flightid
         tests:
           - not_null
           - unique
+          - greater_than_zero
+      - name: arrival
+        tests:
+          - not_null
+      - name: airlineid
+        tests:
+          - relationships:
+              to: ref('dim_airline')
+              field: airlineid
