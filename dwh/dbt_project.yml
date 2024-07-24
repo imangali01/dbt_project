@@ -20,3 +20,6 @@ clean-targets:
 
 vars:
   plane_name: 'Airbus'
+
+on-run-start:
+  - "{{ run_on_start_commands() }}"

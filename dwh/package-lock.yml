@@ -1,0 +1,6 @@
+packages:
+  - package: dbt-labs/metrics
+    version: 0.3.5
+  - package: dbt-labs/dbt_utils
+    version: 0.8.6
+sha1_hash: c40e9acf43a59af32b177bf48f9492a944ca4df1

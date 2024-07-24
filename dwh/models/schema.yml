@@ -4,15 +4,15 @@ models:
   - name: fact_flight
     columns:
       - name: flightid
-        tests:
+        data_tests:
           - not_null
           - unique
           - greater_than_zero
       - name: arrival
-        tests:
+        data_tests:
           - not_null
       - name: airlineid
-        tests:
+        data_tests:
           - relationships:
               to: ref('dim_airline')
               field: airlineid

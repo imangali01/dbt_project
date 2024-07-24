@@ -2,7 +2,7 @@
     config(
         sort='flightid',
         materialized='incremental',
-        pre_hook='TRUNCATE TABLE {{ this }}',
+        pre_hook=prepare_fact_flight_model(),
         incremental_strategy='append',
         schema='dds'
     )

@@ -1,0 +1,107 @@
+version: 2
+
+seeds:
+  - name: airline
+    columns:
+      - name: airlineid
+        data_type: "int"
+        data_tests:
+          - not_null
+          - unique
+      - name: name
+        data_type: "varchar(255)"
+      - name: alias
+        data_type: "varchar(255)"
+      - name: iata
+        data_type: "bpchar(2)"
+      - name: icao
+        data_type: "bpchar(3)"
+      - name: callsign
+        data_type: "varchar(255)"
+      - name: country
+        data_type: "varchar(255)"
+      - name: active
+        data_type: "bpchar(1)"
+
+  - name: airport
+    columns:
+      - name: airportid
+        data_type: "int"
+        data_tests:
+          - not_null
+          - unique
+      - name: name
+        data_type: "varchar(255)"
+      - name: city
+        data_type: "varchar(255)"
+      - name: country
+        data_type: "varchar(255)"
+      - name: iata
+        data_type: "bpchar(3)"
+      - name: icao
+        data_type: "bpchar(4)"
+      - name: latitude
+        data_type: "numeric(10, 7)"
+      - name: longitude
+        data_type: "numeric(10, 7)"
+      - name: altitude
+        data_type: "int"
+      - name: timezone
+        data_type: "numeric(4, 2)"
+      - name: dst
+        data_type: "bpchar(1)"
+      - name: tzdatabasetimezone
+        data_type: "varchar(255)"
+      - name: type
+        data_type: "varchar(50)"
+      - name: source
+        data_type: "varchar(50)"
+
+  - name: country
+    columns:
+      - name: name
+        data_type: "varchar(255)"
+        data_tests:
+          - not_null
+      - name: isocode
+        data_type: "bpchar(2)"
+      - name: dafifcode
+        data_type: "bpchar(2)"
+
+  - name: plane
+    columns:
+      - name: name
+        data_type: "varchar(255)"
+        data_tests:
+          - not_null
+      - name: iatacode
+        data_type: "bpchar(3)"
+      - name: icaocode
+        data_type: "bpchar(4)"
+
+  - name: route
+    columns:
+      - name: airline
+        data_type: "bpchar(3)"
+        data_tests:
+          - not_null
+      - name: airlineid
+        data_type: "int"
+      - name: sourceairport
+        data_type: "bpchar(4)"
+        data_tests:
+          - not_null
+      - name: sourceairportid
+        data_type: "int"
+      - name: destinationairport
+        data_type: "bpchar(4)"
+        data_tests:
+          - not_null
+      - name: destinationairportid
+        data_type: "int"
+      - name: codeshare
+        data_type: "bpchar(1)"
+      - name: stops
+        data_type: "int"
+      - name: equipment
+        data_type: "varchar(255)"
