@@ -1,5 +1,3 @@
-sample data from https://openflights.org/data?lang=en_US#schedule
-
 Welcome to your new dbt project!
 
 ### Using the starter project

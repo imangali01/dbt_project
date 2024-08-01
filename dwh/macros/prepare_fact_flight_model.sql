@@ -4,6 +4,8 @@
 
         {% do log("[+] starting macro prepare_fact_flight_model()", info=True) %}
 
+        {{ call_data_generation_function() }}
+
         {% set query %}
             SELECT count(*)
             FROM information_schema.tables 
